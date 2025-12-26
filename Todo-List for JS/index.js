@@ -3,7 +3,7 @@ const main = document.createElement("main");
 document.body.style.margin = "0px"
 document.body.style.padding = "0px"
 document.body.style.boxSizing = "border-box"
-document.body.style.overflow = "hidden"
+// document.body.style.overflow = "hidden"
 
 
 main.style.margin = "0px"
@@ -21,12 +21,15 @@ document.body.appendChild(main);
 
 const box = document.createElement("div");
 
-box.style.width = "435px"
+box.style.Width = "435px"
+// box.style.minHeight = "400px"
+box.style.maxHeight = "390px"
 box.style.backgroundColor = "#0000002a"
 box.style.backdropFilter = "blur(1px)"
 box.style.boxShadow = "5px 8px 12px 5px"
 box.style.borderTopLeftRadius = "30px"
 box.style.borderBottomRightRadius = "30px"
+box.style.overflow = "auto"
 main.appendChild(box);
 
 const heading = document.createElement("h1");
@@ -61,6 +64,7 @@ input.style.borderRadius = "10px"
 inputBox.appendChild(input);
 
 
+
 // BUTTUN CHILD 2
 const addBtn = document.createElement("button");
 addBtn.textContent = "Add Task";
@@ -83,7 +87,6 @@ ListBox.appendChild(addUl)
 
 
 const AddTask = () => {
-
 
     // let InputVal = input.value;
     let items = document.createElement("li");
@@ -109,6 +112,7 @@ const AddTask = () => {
     span.style.width = "250px"
     items.appendChild(span);
 
+    input.value = "";
 
     const editBtn = document.createElement("button");
 
@@ -187,6 +191,11 @@ input.addEventListener("keydown", function (e) {
 
     if (e.key === "Enter") {
         AddTask();
+        // if (items == "3") {
+        //     box.style.overflowY = "scroll"
+            
+        // }
+
     }
 }
 )
@@ -194,6 +203,10 @@ input.addEventListener("keydown", function (e) {
 
 addBtn.addEventListener("click", function () {
     AddTask();
+    // if (items == "3") {
+    //     box.style.overflowY = "scroll"
+        
+    // }
 })
 
 
