@@ -1,0 +1,9 @@
+.no-scrollbar {
+  overflow: auto;
+  -ms-overflow-style: none;      /* Internet Explorer & Edge */
+  scrollbar-width: none;         /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: inline;                 /* Chrome, Safari */
+}

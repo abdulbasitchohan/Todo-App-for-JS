@@ -22,6 +22,7 @@ document.body.appendChild(main);
 const box = document.createElement("div");
 
 box.style.Width = "435px"
+box.classList.add('no-scrollbar')
 // box.style.minHeight = "400px"
 box.style.maxHeight = "390px"
 box.style.backgroundColor = "#0000002a"
@@ -68,13 +69,13 @@ inputBox.appendChild(input);
 // BUTTUN CHILD 2
 const addBtn = document.createElement("button");
 addBtn.textContent = "Add Task";
-addBtn.style.backgroundColor = `rgb(0 6 183)`
-addBtn.style.color = "#ffff"
-addBtn.style.textAlign = `center`
-addBtn.style.border = `3px solid transparent `
-addBtn.style.padding = `5px 10px`
-addBtn.style.borderRadius = `10px`
-addBtn.style.cursor = "pointer"
+addBtn.style.fontSize = `1rem`;
+addBtn.style.backgroundColor = `rgb(0 6 183)`;
+addBtn.style.color = "#ffff";
+addBtn.style.border = `3px solid transparent `;
+addBtn.style.padding = `5px 10px`;
+addBtn.style.borderRadius = `10px`;
+addBtn.style.cursor = "pointer";
 
 inputBox.appendChild(addBtn);
 
@@ -137,7 +138,7 @@ const AddTask = () => {
     // delBtn.style.padding = "6px 10px"
     // delBtn.style.borderRadius = "8px"
     delBtn.style.cursor = "pointer"
-    delBtn.style.float = "right"
+    // delBtn.style.float = "right"
 
     items.appendChild(delBtn)
 
@@ -163,7 +164,6 @@ const AddTask = () => {
             editInput.value = span.textContent;
 
             items.insertBefore(editInput, span);
-
             items.removeChild(span);
 
             editBtn.innerHTML = `<i class="ri-add-box-fill"></i>`
@@ -178,7 +178,6 @@ const AddTask = () => {
             items.insertBefore(span, editInput);
             items.removeChild(editInput);
 
-
             editBtn.innerHTML = `<i class="ri-edit-2-fill"></i>`;
         }
 
@@ -188,24 +187,27 @@ const AddTask = () => {
 }
 
 input.addEventListener("keydown", function (e) {
-
     if (e.key === "Enter") {
-        AddTask();
-        // if (items == "3") {
-        //     box.style.overflowY = "scroll"
-            
-        // }
-
+        if (input.value !== "") {
+            AddTask();
+        }else[
+            alert(`Please Enter Your Task.`)
+        ]
     }
 }
+
 )
 
 
 addBtn.addEventListener("click", function () {
-    AddTask();
+    if (input.value !== "") {
+        AddTask();
+    }else{
+        alert(`Please Enter Your Task.`)
+    }
     // if (items == "3") {
     //     box.style.overflowY = "scroll"
-        
+
     // }
 })
 
